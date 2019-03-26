@@ -7,11 +7,22 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>최종 화면</title>
+<style>
+div {
+	border: 25px solid green;
+	padding: 25px;
+	margin: 25px;
+}
+
+h2 {
+	text-align: center;
+}
+</style>
 </head>
 <body>
-	<br>
-	<br>
+
 	<h2>최종 수강신청 목록</h2>
+	<div>
 	<table border="1">
 		<colgroup>
 			<col>
@@ -31,7 +42,9 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	<br><br>
 	<input type='button' value='로그인화면으로'
 		onclick='location.href="auth/login";'>
+	</div>
 </body>
 </html>

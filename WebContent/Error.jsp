@@ -5,9 +5,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content = "text/html;charset=UTF-8">
-<title>시스템 오류!</title>
+<meta http-equiv="Refresh" content="2;url=/register/auth/login">
+<title>오류!</title>
+<style>
+p {
+	border: 25px solid red;
+	padding: 25px;
+	margin: 25px;
+}
+</style>
 </head>
 <body>
-<p> 요청을 처리하는 중에 문제가 발생했습니다.</p>
+<p>오류!</p>
 </body>
 </html>

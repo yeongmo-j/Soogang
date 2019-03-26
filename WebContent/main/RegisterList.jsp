@@ -8,10 +8,8 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 </head>
 <body>
-<br>
-<br>
-
 	<h2>수강신청 목록</h2>
+	<div>
 	<table border="1">
 		<colgroup>
 			<col>
@@ -21,7 +19,6 @@
 			<tr>
 				<th scope="col">신청과목코드</th>
 				<th scope="col">신청취소</th>
-
 			</tr>
 		</thead>
 		<tbody>
@@ -34,5 +31,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
+</div>
 </body>
 </html>

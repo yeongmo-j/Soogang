@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 	<style>
 		div {
-			border: 25px solid green;
+			border: 25px solid red;
 			padding: 25px;
 			margin: 25px;
 		}
@@ -16,10 +16,10 @@
 			text-align: center;
 		}
 	</style>
-<title>오류!</title>
+<title>실!</title>
 </head>
 <body>
-	<div>적어도 하나는 체크해야합니다.<br>
+	<div>9학점 이상으로 수강신청 해야 합니다!
 	<input type='button' value='메인으로' onclick='location.href="main";'></div>
 </body>
 </html>

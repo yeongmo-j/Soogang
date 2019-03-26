@@ -7,126 +7,84 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
 <title>신청 결과</title>
+<style>
+.succ {
+	border: 25px solid green;
+	padding: 25px;
+	margin: 25px;
+}
+
+.fail {
+	border: 25px solid red;
+	padding: 25px;
+	margin: 25px;
+}
+
+h2 {
+	text-align: center;
+}
+</style>
 </head>
 <body>
 	<c:if test="${requestScope.countmap.fail>0}">
 		<h2>실패 목록</h2>
-		<c:if test="${requestScope.countmap.alreadyRegisted>0}">
-			<h3>이미 수강신청한 리스트</h3>
-			<table>
-				<colgroup>
-					<col>
-				</colgroup>
-				<thead>
-					<tr>
-						<th scope="col">과목코드</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="subject"
-						items="${requestScope.resultMap.alreadyRegisted}">
-						<tr>
-							<td>${subject}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</c:if>
-		<c:if test="${requestScope.countmap.creditFailList>0}">
-			<h3>신청 학점 초과 리스트</h3>
-			<table>
-				<colgroup>
-					<col>
-				</colgroup>
-				<thead>
-					<tr>
-						<th scope="col">과목코드</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="subject"
-						items="${requestScope.resultMap.creditFailList}">
-						<tr>
-							<td>${subject}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</c:if>
-		<c:if test="${requestScope.countmap.timeFailList>0}">
-			<h3>기존에 신청한 수업과 시간 겹침 리스트</h3>
-			<table>
-				<colgroup>
-					<col>
-				</colgroup>
-				<thead>
-					<tr>
-						<th scope="col">과목코드</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="subject"
-						items="${requestScope.resultMap.timeFailList}">
-						<tr>
-							<td>${subject}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</c:if>
-		<c:if test="${requestScope.countmap.preFailList>0}">
-			<h3>선수과목 수강 안함 리스트</h3>
-			<table>
-				<colgroup>
-					<col>
-				</colgroup>
-				<thead>
-					<tr>
-						<th scope="col">과목코드</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="subject"
-						items="${requestScope.resultMap.preFailList}">
-						<tr>
-							<td>${subject}</td>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</c:if>
+		<div class="fail">
+			<c:if test="${requestScope.countmap.alreadyRegisted>0}">
+				<h3>이미 수강신청한 리스트</h3>
+				<ol>
+				<c:forEach var="subject"
+					items="${requestScope.resultMap.alreadyRegisted}">
+					<li>${subject}</li>
+				</c:forEach>
+				</ol>
+			</c:if>
+			<c:if test="${requestScope.countmap.creditFailList>0}">
+				<h3>신청 학점 초과 리스트</h3>
+				<ol>
+				<c:forEach var="subject"
+					items="${requestScope.resultMap.creditFailList}">
+					<li>${subject}</li>
+				</c:forEach>
+				</ol>
+			</c:if>
+			<c:if test="${requestScope.countmap.timeFailList>0}">
+				<h3>기존에 신청한 수업과 시간 겹침 리스트</h3>
+				<ol>
+				<c:forEach var="subject"
+					items="${requestScope.resultMap.timeFailList}">
+					<li>${subject}</li>
+				</c:forEach>
+				</ol>
+			</c:if>
+			<c:if test="${requestScope.countmap.preFailList>0}">
+				<h3>선수과목 수강 안함 리스트</h3>
+				<ol>
+				<c:forEach var="subject"
+					items="${requestScope.resultMap.preFailList}">
+					<li>${subject}</li>
+				</c:forEach>
+				</ol>
+			</c:if>
+		</div>
 	</c:if>
-	<br>
-	<br>
 	<br>
 	<c:if test="${requestScope.countmap.success>0}">
 		<h2>성공 목록</h2>
-		<table>
-			<colgroup>
-				<col>
-			</colgroup>
-			<thead>
-				<tr>
-					<th scope="col">과목코드</th>
-				</tr>
-			</thead>
-			<tbody>
-				<c:forEach var="subject"
-					items="${requestScope.resultMap.successList}">
-					<tr>
-						<td>${subject}</td>
-					</tr>
-				</c:forEach>
-			</tbody>
-		</table>
+		<div class="succ">
+			<ol>
+			<c:forEach var="subject"
+				items="${requestScope.resultMap.successList}">
+				<li>${subject}</li>
+			</c:forEach>
+			</ol>
+		</div>
 	</c:if>
-	<br>
-	<br> 저장하러 가기
-	<input type='button' value='저장' onclick='location.href="save";'>
-	<br>
-	<br>
-	<br> 다시 메인으로 가
-	<input type='button' value='메인으로' onclick='location.href="main";'>
+	<div class="succ">
+		저장하러 가기 <input type='button' value='저장'
+			onclick='location.href="save";'> <br> <br> <br>
+		다시 메인으로 가기 <input type='button' value='메인으로'
+			onclick='location.href="main";'>
+	</div>
 
 </body>
 </html>

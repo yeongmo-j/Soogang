@@ -7,6 +7,13 @@
 <meta http-equiv="Content-Type" content = "text/html;charset=UTF-8">
 <meta http-equiv="Refresh" content="2;url=login">
 <title>로그인 실패</title>
+<style>
+p {
+	border: 25px solid red;
+	padding: 25px;
+	margin: 25px;
+}
+</style>
 </head>
 <body>
 <p>로그인 실패입니다. 학번 또는 암호가 맞지 않습니다.!<br>
