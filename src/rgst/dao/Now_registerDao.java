@@ -23,10 +23,12 @@ public class Now_registerDao {
 	    try {
 	      connection = ds.getConnection();
 	      stmt = connection.prepareStatement(
-	          "INSERT INTO NOW_REGISTER(STU_CODE, SUB_CODE)"
-	              + " VALUES (?,?)");
+	          "INSERT INTO NOW_REGISTER(STU_CODE, SUB_CODE, YEAR, SEMESTER)"
+	              + " VALUES (?,?,?,?)");
 	      stmt.setString(1, stu_code);
 	      stmt.setString(2, sub_code);
+	      stmt.setString(3, "2019");
+	      stmt.setString(4, "1");
 	      stmt.executeUpdate();
 	    } catch (Exception e) {
 	      throw e;
